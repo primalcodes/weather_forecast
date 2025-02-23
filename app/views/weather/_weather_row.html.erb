@@ -1,0 +1,12 @@
+<div class="row border rounded m-2 bg-light border-info">
+  <div class="col fs-4 text-left">
+    <span class="col mt-2"><%= weather.date&.strftime("%-I:%M%P") || "N/A" %></span>
+  </div>
+  <div class="col fw-bold fs-1 text-center">
+    <%= weather.temp.to_i %>&#176;
+  </div>
+  <div class="col">
+    <img src="<%= weather.icon_url %>" alt="<%= weather.description %>">
+    <span class="d-none d-xl-inline d-lg-block"><%= weather.description&.titleize %></span>
+  </div>
+</div>

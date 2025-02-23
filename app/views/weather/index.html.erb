@@ -1,0 +1,31 @@
+<section>
+  <div class="row py-5">
+    <div class="border rounded bg-light col-lg-8 col-md-8 mx-auto p-5 text-center" hx-target="#weather-cards" hx-swap="innerHTML" hx-push-url="true">
+      <h1 class="fw-light">Weather Forecast</h1>
+      <p class="lead text-body-secondary">Enter an address to see its weather forecast</p>
+      <form id="weather-form" action="<%= root_path %>" method="get">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control form-control-lg" placeholder="Beverly Hills, CA" name="address" required value="<%= params[:address] %>">
+          <button class="btn btn-primary" type="submit">Get Forecast</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="weather-cards" class="col-lg-8 col-md-8 mx-auto mt-5">
+    <%= render partial: "error", locals: { message: flash[:alert]} if flash[:alert].present? %>
+
+    <%= "Cached" if @cached_weather && @weather_data %>
+    <% if @location&.success? %>
+      <div class="fw-bold mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+          <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+        </svg>
+        <%= @location.name %>
+      </div>
+    <% end %>
+
+    <%= render partial: "current_weather", locals: { weather: @weather_data.current } if @weather_data&.success? %>
+    <%= render partial: "forecast", locals: { weather_data: @weather_data.forecast } if @weather_data&.success? %>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<div class="row border rounded m-2 bg-light border-info">
+  <div class="col fs-4 text-left">
+    <span class="col mt-2">Current</span>
+  </div>
+  <div class="col fw-bold fs-4 text-center">
+    <span><%= weather.temp.to_i %>&#176;</span>
+    <span class="text-primary">L: <%= weather.low_temp.to_i %>&#176;</span>
+    <span class="text-danger">H: <%= weather.high_temp.to_i %>&#176;</span>
+  </div>
+  <div class="col">
+    <img src="<%= weather.icon_url %>" alt="<%= weather.description %>">
+    <span class="d-none d-xl-inline d-lg-block"><%= weather.description&.titleize %></span>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+
+
+<% weather_data.keys.each do |day| %>
+  <div class="mb-3 border rounded bg-info-subtle">
+    <h2 class="mb-3 p-5"><%= day.strftime("%A, %B %d") %></h2>
+    <%= render partial: "weather_row", collection: weather_data[day] || [], as: :weather %>
+  </div>
+<% end %>
