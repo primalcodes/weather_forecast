@@ -1,0 +1,23 @@
+{"place_id": 329224968,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "relation",
+  "osm_id": 4034953,
+  "lat": "42.7256184",
+  "lon": "-77.8741695",
+  "class": "boundary",
+  "type": "administrative",
+  "place_rank": 14,
+  "importance": 0.4346333135534216,
+  "addresstype": "village",
+  "name": "Town of Mount Morris",
+  "display_name": "Town of Mount Morris, Livingston County, New York, 14510, United States",
+  "address": 
+    {"village": "Town of Mount Morris",
+    "county": "Livingston County",
+    "state": "New York",
+    "ISO3166-2-lvl4": "US-NY",
+    "postcode": "14510",
+    "country": "United States",
+    "country_code": "us"},
+  "boundingbox": ["42.6094410", "42.7510610", "-78.0153880", "-77.8402280"]
+}

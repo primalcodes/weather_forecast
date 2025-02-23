@@ -43,6 +43,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "dotenv-rails", "~> 3.1"
+
+  gem "rspec-rails", "~> 7.1"
 end
 
 group :development do
@@ -50,5 +54,8 @@ group :development do
   gem "web-console"
 end
 
+gem "geocoder", "~> 1.8"
 
-gem "rspec-rails", "~> 7.1"
+gem "httparty", "~> 0.22.0"
+
+gem "redis", "~> 5.4"
