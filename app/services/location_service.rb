@@ -5,7 +5,7 @@ require "ostruct"
 
 
 # LocationService is a service class responsible for geocoding an address
-# and returning its location details.
+# and returning corresponding location details.
 #
 # @example
 #   location = LocationService.call(address: "123 Chapel Street, Mount Morris, NY")

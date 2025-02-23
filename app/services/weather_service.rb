@@ -49,10 +49,10 @@ class WeatherService
   # @param lat [Float] the latitude of the location.
   # @param lon [Float] the longitude of the location.
   #
-  # @return [OpenStruct] an object containing the weather details.
-  # @raise [WeatherServiceError] if fetching weather fails.
-  def self.call(api_key:, lat:, lon:)
-   new(api_key:, lat:, lon:).call
+  # @param same as #initialize
+  # @return same as #call
+  def self.call(**kwargs)
+    new(**kwargs).call
   end
 
   # Instance method to get the current and forecast weather for a given location.

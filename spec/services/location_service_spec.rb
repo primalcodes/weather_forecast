@@ -6,13 +6,12 @@ RSpec.describe LocationService do
       let(:address) { "Albany, NY" }
 
       before do
-        # Using a simple CITY, ST address for testing of a city that covers a large area / multiple zip codes
         large_area_address = File.read(Rails.root.join("spec", "support", "fixtures", "geocode", "large_area_address.json"))
 
         response = [ OpenStruct.new(data: JSON.parse(large_area_address)) ]
         allow(Geocoder).to receive(:search).and_return(response)
       end
-      it "returns the location details" do
+      it "returns the location details of a large city, no zipcode" do
         location = LocationService.call(address: address)
 
         expect(location.place_id).to be_a_kind_of(Integer)
@@ -55,7 +54,7 @@ RSpec.describe LocationService do
       end
     end
 
-    context "when geocoding fails" do
+    context "when provided an invalid address" do
       let(:address) { "InvalidAddress" }
 
       before do
