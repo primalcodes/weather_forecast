@@ -56,6 +56,6 @@ end
 
 gem "geocoder", "~> 1.8"
 
-gem "httparty", "~> 0.22.0"
+gem "httparty", "~> 0.23.1"
 
 gem "redis", "~> 5.4"
